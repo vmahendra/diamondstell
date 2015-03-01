@@ -1,0 +1,99 @@
+<div class="row" style="background-color:none">
+<br>
+
+<div class="small-12 columns" >
+
+<div style="background">
+<br><br>
+<div class="small-7 columns contact" style="background-image: url(/assets/panel1.jpg);border-radius:15px;">
+ 
+<h4 align="center" style="color:#ff6d00"><%= t('.contact_us') %></h4>
+<%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
+  <% if ContactUs.require_name %>
+    <li class='string required' id='contact_us_contact_name_input'>
+      <%= f.label :name, (t('.name') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+      <%= f.text_field :name %>
+      <% if f.object.errors[:name].present? %>
+        <p class='inline-error'><%= f.object.errors[:name].join(' and ') %></p>
+      <% end %>
+    </li>
+  <% end %>
+  <li class='string required' id='contact_us_contact_email_input'>
+    <%= f.label :email, (t('.email') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+    <%= f.text_field :email %>
+    <% if f.object.errors[:email].present? %>
+      <p class='inline-error'><%= f.object.errors[:email].join(' and ') %></p>
+    <% end %>
+  </li>
+  <% if ContactUs.require_subject %>
+    <li class='string required' id='contact_us_contact_subject_input'>
+      <%= f.label :subject, (t('.subject') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+      <%= f.text_field :subject %>
+      <% if f.object.errors[:subject].present? %>
+        <p class='inline-error'><%= f.object.errors[:subject].join(' and ') %></p>
+      <% end %>
+    </li>
+  <% end %>
+  <li class='text required' id='contact_us_contact_message_input'>
+    <%= f.label :message, (t('.message') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+    <%= f.text_area :message %>
+    <% if f.object.errors[:message].present? %>
+      <p class='inline-error'><%= f.object.errors[:message].join(' and ') %></p>
+    <% end %>
+  </li><br>
+  <li class='commit'>
+    <%= f.submit :submit, :alt => t('.submit'), :class => 'submit create', :label => t('.submit'), :title => t('.submit')%>
+  </li>
+<% end %>
+
+</div>
+
+
+
+</div>
+
+<div class="small-3 columns">
+  <h5 align="center">Our Clints</h5><br>
+
+   <marquee onmouseover="stop();"  onmouseout="start();"> <a href=""><img src="/assets/hyd.jpg" width="100px" height="50px"></a>
+    <a href=""><img src="/assets/ivrcl.jpeg" width="100px" height="50px"></a></marquee>
+    <br><br>   
+    <marquee direction="right" onmouseover="stop();"  onmouseout="start();"><a href=""><img src="/assets/lt.jpg" width="100px" height="50px"></a>
+    <a href=""><img src="/assets/tata.png" width="100px" height="50px"></a></marquee>
+    <br><br>
+    <marquee onmouseover="stop();"  onmouseout="start();"><a href=""><img src="/assets/gu.jpg" width="100px" height="50px"></a>
+    <a href=""><img src="/assets/gu.jpg" width="100px" height="50px"></a></marquee>
+    <hr> 
+   
+   <!-- <a href=""><img src="/assets/gu.jpg" width="250px" height="500px"></a><br><br> -->
+<!--    <a href=""><img src="/assets/panel.jpg" width="250px" height="500px"></a><br><br><br>
+ --></div>
+</div>
+
+</div>
+
+
+<style type="text/css">
+
+.small-3{
+    border-left:solid #282828;
+    border-left-width: 1px;
+   }
+
+   .required, .commit{list-style-type: none!important}
+
+.contact{
+  padding:20px;
+  margin:50px;
+
+  
+    
+}
+
+h2{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+</style>

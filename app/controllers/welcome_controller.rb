@@ -5,4 +5,6 @@ class WelcomeController < ApplicationController
   end
   def contactus
   end
+  def new
+  end
 end

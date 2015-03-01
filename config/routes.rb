@@ -3,6 +3,7 @@ Diamond::Application.routes.draw do
   get "welcome/index"
   get "welcome/contactus"
   get "welcome/gallery"
+  get "welcome/new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
