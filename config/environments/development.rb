@@ -32,6 +32,7 @@ Diamond::Application.configure do
   # Do not compress assets
   config.assets.compress = false
 
+
   # Expands the lines which load the assets
   config.assets.debug = true
      config.action_mailer.raise_delivery_errors = true
@@ -41,9 +42,11 @@ Diamond::Application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'gmail.com',
-    :user_name => 'vijaymahendra85@gmail.com',
-    :password => 'satish',
-    :authentication => 'plain',
+    :user_name => 'diamondsteel9@gmail.com',
+    :password => 'mukesh999',
+    :authentication => 'login',
     :enable_starttls_auto => true
   }
+
+  
 end
